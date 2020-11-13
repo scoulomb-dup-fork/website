@@ -726,6 +726,11 @@ The output is similar to:
 1f2d1e2e67df
 ```
 
+#### Environment variables are not updated after a secret update
+
+If a container already consumed a secret in an environment variable, secret update will not cascade update to the container.
+But if the Kubelet restarts the container, secret update will be available.
+
 ## Immutable Secrets {#secret-immutable}
 
 {{< feature-state for_k8s_version="v1.19" state="beta" >}}
